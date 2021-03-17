@@ -1,0 +1,9 @@
+{
+  "name": "John",
+  "surname": "Doe",
+  "profilePhoto": "../img/avatar.jpg",
+  "position": "Account Manager Amix corp",
+  "email": "hannagover@gmail.com",
+  "phone": "+91 654 784 547",
+  "address": "71 Piligrim Avenue Chevy Chase, MD 20815"
+}
