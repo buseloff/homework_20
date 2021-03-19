@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import styles from "./UserCard.module.css";
 
+function Avatar(props) {
+  return (
+    <div className={styles.userPhoto}>
+      <img src={props.userData.profilePhoto} alt="-------------User's avatar" />
+    </div>
+  );
+}
+
+function UserItemInfo(props) {
+  return (
+    <div className={styles.userItem}>
+      <div className={styles.userState}>{props.name}</div>
+      <div className={styles.userValue}>{props.userData[props.nameItem]}</div>
+    </div>
+  );
+}
+
 class UserCard extends Component {
   render() {
     return (
       <div className={styles.myCard}>
         <div className={styles.userInfo}>
           <div className={styles.top}>
-            <div className={styles.userPhoto}>
-              <img
-                src={this.props.userData.profilePhoto}
-                alt="-------------User's avatar"
-              />
-            </div>
+            <Avatar userData={this.props.userData} />
             <p className={styles.userName}>
               {this.props.userData.name} {this.props.userData.surname}
             </p>
@@ -22,26 +34,22 @@ class UserCard extends Component {
           </div>
 
           <div className={styles.userContactInfo}>
-            <div className={styles.userItem}>
-              <div className={styles.userState}>Email address</div>
-              <div className={styles.userValue}>
-                {this.props.userData.email}
-              </div>
-            </div>
+            <UserItemInfo
+              userData={this.props.userData}
+              name="Email address"
+              nameItem="email"
+            />
+            <UserItemInfo
+              userData={this.props.userData}
+              name="Phone"
+              nameItem="phone"
+            />
 
-            <div className={styles.userItem}>
-              <div className={styles.userState}>Phone</div>
-              <div className={styles.userValue}>
-                {this.props.userData.phone}
-              </div>
-            </div>
-
-            <div className={styles.userItem}>
-              <div className={styles.userState}>Address</div>
-              <div className={styles.userValue}>
-                {this.props.userData.address}
-              </div>
-            </div>
+            <UserItemInfo
+              userData={this.props.userData}
+              name="Address"
+              nameItem="address"
+            />
           </div>
         </div>
       </div>
