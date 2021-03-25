@@ -1,0 +1,17 @@
+.dayNames {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(auto, 1fr));
+    justify-content: center;
+    height: 40px;
+  }
+  
+  .dayNames2 {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-weight: bold;
+  }
